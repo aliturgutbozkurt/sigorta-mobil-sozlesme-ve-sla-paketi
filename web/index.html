@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AegisConnect | Kurumsal Sigorta Mobil Sözleşme, SLA ve Junior Mühendis Portalı</title>
+  <meta name="description" content="Aegis Sigorta ve Nexora Yazılım uçtan uca mobil proje sözleşmeleri, SLA/SLO taahhütleri ve junior yazılımcılar için anlaşılır rehber.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AegisConnect</span>
+          <span class="brand-badge">Enterprise InsurTech Suite</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" data-tab="contracts" id="tab-contracts-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span data-i18n="nav.contracts">Sözleşmeler</span>
+        </button>
+        <button class="nav-btn" data-tab="guide" id="tab-guide-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span data-i18n="nav.guide">Junior Rehberi</span>
+        </button>
+        <button class="nav-btn" data-tab="calculator" id="tab-calc-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="14"></line><line x1="12" y1="14" x2="12" y2="14"></line><line x1="8" y1="14" x2="8" y2="14"></line><line x1="16" y1="18" x2="16" y2="18"></line><line x1="12" y1="18" x2="12" y2="18"></line><line x1="8" y1="18" x2="8" y2="18"></line></svg>
+          <span data-i18n="nav.calculator">SLA Hesaplayıcı</span>
+        </button>
+        <button class="nav-btn" data-tab="matrix" id="tab-matrix-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <span data-i18n="nav.matrix">Arıza Matrisi</span>
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="tr" id="btn-lang-tr">TR</button>
+          <button class="lang-btn" data-lang="en" id="btn-lang-en">EN</button>
+        </div>
+        <a href="https://github.com/aliturgutbozkurt" target="_blank" class="github-link" title="GitHub Repo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="pulse-dot"></span>
+        <span data-i18n="hero.tag">Sigorta & Yazılım Sektörü Çatı Sözleşme Paketi</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">AegisConnect Mobil Sigortacılık</span><br>
+        <span class="gradient-text" data-i18n="hero.title2">Sözleşme, SLA/SLO & Mühendislik Paketi</span>
+      </h1>
+      <p class="hero-desc" data-i18n="hero.desc">
+        Aegis Sigorta A.Ş. ile Nexora Bilişim A.Ş. arasındaki uçtan uca kurumsal mobil sigortacılık projesinin (iOS & Android) Türkçe ve İngilizce tüm sözleşmeleri, teknik şartnamesi, SLA/SLO taahhütleri ve acemi yazılımcılar için hayatta kalma kılavuzu.
+      </p>
+
+      <!-- Quick Metrics Strip -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-val">99.90%</div>
+          <div class="metric-lbl" data-i18n="metrics.uptime">Uptime Taahhüdü (SLA)</div>
+          <div class="metric-sub">Max. 43 dk kesinti / ay</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">&ge; 99.80%</div>
+          <div class="metric-lbl" data-i18n="metrics.crashfree">Crash-Free Users</div>
+          <div class="metric-sub">Mobil çökmesiz kullanıcı</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">15 Dk</div>
+          <div class="metric-lbl" data-i18n="metrics.p1resp">P1 Arıza Yanıtı</div>
+          <div class="metric-sub">7/24 kesintisiz nöbet</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">12.5M ₺</div>
+          <div class="metric-lbl" data-i18n="metrics.val">Proje Bedeli (SOW)</div>
+          <div class="metric-sub">24 Hafta + 12 Ay Garanti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <!-- TAB 1: CONTRACTS -->
+    <div class="tab-panel active" id="tab-contracts">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="contracts.title">Resmi Sözleşme Belgeleri</h2>
+          <p class="panel-subtitle" data-i18n="contracts.subtitle">SEDDK, MASAK, KVKK ve GDPR standartlarına uygun olarak hazırlanmış kurumsal sözleşmeler.</p>
+        </div>
+        <div class="search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="contract-search" placeholder="Madde veya kelime ara..." data-i18n-placeholder="contracts.searchPlaceholder">
+        </div>
+      </div>
+
+      <div class="contract-grid" id="contracts-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Contract Reader Modal / Drawer -->
+      <div class="doc-viewer-modal" id="doc-modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <div>
+              <span class="modal-code" id="modal-doc-code">AEG-NXR-MSA-2026-V1</span>
+              <h3 class="modal-title" id="modal-doc-title">Ana Hizmet Sözleşmesi</h3>
+            </div>
+            <div class="modal-actions">
+              <button class="icon-btn" id="modal-copy-btn" title="Metni Kopyala">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+              <button class="icon-btn" id="modal-close-btn" title="Kapat">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body" id="modal-doc-body">
+            <!-- Full document markdown/html rendered here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: JUNIOR ENGINEER GUIDE -->
+    <div class="tab-panel" id="tab-guide">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="guide.title">Junior Yazılım Mühendisi Hayatta Kalma Rehberi</h2>
+          <p class="panel-subtitle" data-i18n="guide.subtitle">"Ben sadece kod yazacaktım, bu sözleşmeler benim ne işime yarar?" diyen acemi yazılımcıya özel madde madde pratik rehber.</p>
+        </div>
+      </div>
+
+      <div class="guide-layout">
+        <div class="guide-sidebar" id="guide-sidebar">
+          <!-- Guide TOC rendered by JS -->
+        </div>
+        <div class="guide-content-area" id="guide-content">
+          <!-- Guide Chapter Content rendered by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SLA & PENALTY CALCULATOR -->
+    <div class="tab-panel" id="tab-calculator">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="calc.title">İnteraktif SLA, Kesinti ve Ceza Hesaplayıcı</h2>
+          <p class="panel-subtitle" data-i18n="calc.subtitle">Aylık gerçekleşen uptime ve arıza sürelerini girin; sözleşme uyarınca uygulanacak ceza ve kesintileri anında hesaplayın.</p>
+        </div>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card input-card">
+          <h3 class="card-title" data-i18n="calc.inputsTitle">Operasyonel Parametreler</h3>
+          
+          <div class="form-group">
+            <label for="calc-monthly-fee" data-i18n="calc.feeLabel">Aylık Bakım / Destek Hakedişi (TL)</label>
+            <input type="number" id="calc-monthly-fee" value="200000" step="5000">
+          </div>
+
+          <div class="form-group">
+            <label for="calc-uptime" data-i18n="calc.uptimeLabel">Aylık Gerçekleşen Uptime (%)</label>
+            <div class="slider-wrapper">
+              <input type="range" id="calc-uptime" min="95.00" max="100.00" step="0.01" value="99.75">
+              <span class="slider-val" id="calc-uptime-val">99.75%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="calc-p1-count" data-i18n="calc.p1CountLabel">Yaşanan P1 Kritik Arıza Sayısı</label>
+            <input type="number" id="calc-p1-count" min="0" max="10" value="1">
+          </div>
+
+          <div class="form-group">
+            <label for="calc-p1-delay" data-i18n="calc.p1DelayLabel">P1 Çözüm Süresi Aşımı (Saat)</label>
+            <input type="number" id="calc-p1-delay" min="0" max="100" value="2">
+            <span class="field-hint" data-i18n="calc.delayHint">4 saatin üzerindeki her saat için 25.000 TL ceza.</span>
+          </div>
+
+          <button class="btn btn-primary" id="btn-recalculate" data-i18n="calc.calcBtn">Yeniden Hesapla</button>
+        </div>
+
+        <div class="calc-card result-card">
+          <h3 class="card-title" data-i18n="calc.resultsTitle">Finansal Kesinti ve Ceza Raporu</h3>
+
+          <div class="calc-metric-rows">
+            <div class="calc-row">
+              <span class="calc-label" data-i18n="calc.downtimeRealized">Toplam Gerçekleşen Kesinti:</span>
+              <span class="calc-value highlight" id="res-downtime">1 saat 48 dakika</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label" data-i18n="calc.allowedDowntime">İzin Verilen Kesinti (Hedef %99.9):</span>
+              <span class="calc-value">43 dakika 12 saniye</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label" data-i18n="calc.creditRate">Uptime Hizmet Kredisi Kesinti Oranı:</span>
+              <span class="calc-value badge badge-warning" id="res-rate">%10 Ceza Kesintisi</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label" data-i18n="calc.creditDeduction">Uptime Kesinti Tutarı:</span>
+              <span class="calc-value negative" id="res-credit-amount">- 20.000 TL</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label" data-i18n="calc.p1Penalty">P1 Gecikme Cezası (25.000 TL / Saat):</span>
+              <span class="calc-value negative" id="res-p1-penalty">- 50.000 TL</span>
+            </div>
+            <div class="calc-divider"></div>
+            <div class="calc-row total-row">
+              <span class="calc-label" data-i18n="calc.netPayout">Yükleniciye Ödenecek Net Hakediş:</span>
+              <span class="calc-value net-val" id="res-net-payout">130.000 TL</span>
+            </div>
+          </div>
+
+          <div class="calc-alert" id="calc-alert-box">
+            <strong>Durum Özeti:</strong> Bu ay 99.90% hedefinin altında kalındı ve 2 saatlik P1 gecikmesi yaşandı. Toplam 70.000 TL ceza mahsup edilmiştir.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SEVERITY MATRIX -->
+    <div class="tab-panel" id="tab-matrix">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title" data-i18n="matrix.title">Arıza Önceliklendirme ve SLA Matrisi</h2>
+          <p class="panel-subtitle" data-i18n="matrix.subtitle">Hata seviyeleri, ilk yanıt, geçici çözüm ve kalıcı yama süreleri tablosu.</p>
+        </div>
+      </div>
+
+      <div class="matrix-table-card">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Öncelik</th>
+              <th>Örnek Durum ve İş Etkisi</th>
+              <th>İlk Yanıt</th>
+              <th>Geçici Çözüm</th>
+              <th>Kalıcı Düzeltme</th>
+              <th>Destek Penceresi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-p1">
+              <td><span class="badge badge-critical">P1 - Kritik</span></td>
+              <td>Uygulamanın çökmesi, poliçe satın alınamaması, kaza/hasar fotoğrafının yüklenememesi, veri sızıntısı şüphesi.</td>
+              <td><strong>15 Dakika</strong></td>
+              <td>2 Saat</td>
+              <td>4 Saat Hotfix</td>
+              <td><strong>7/24/365 Kesintisiz</strong></td>
+            </tr>
+            <tr class="row-p2">
+              <td><span class="badge badge-major">P2 - Büyük</span></td>
+              <td>Anlaşmalı hastane haritasının açılmaması, tek bir banka kartında POS hatası, Push bildirimlerin gecikmesi.</td>
+              <td><strong>1 Saat</strong></td>
+              <td>4 Saat</td>
+              <td>8 Saat</td>
+              <td>7/24</td>
+            </tr>
+            <tr class="row-p3">
+              <td><span class="badge badge-moderate">P3 - Orta</span></td>
+              <td>Sistemi durdurmayan kozmetik dışı hatalar, poliçe detayında eksik etiket, yenileme butonu gecikmesi.</td>
+              <td><strong>4 Saat</strong></td>
+              <td>1 İş Günü</td>
+              <td>2 İş Günü</td>
+              <td>Mesai Saatleri (09:00 - 18:00)</td>
+            </tr>
+            <tr class="row-p4">
+              <td><span class="badge badge-minor">P4 - Düşük</span></td>
+              <td>Yazım hataları, font boyutu uyuşmazlığı, küçük ikon kaymaları, yeni geliştirme önerileri.</td>
+              <td><strong>1 İş Günü</strong></td>
+              <td>-</td>
+              <td>Sonraki Planlı Sprint</td>
+              <td>Mesai Saatleri (09:00 - 18:00)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <p class="footer-title">AegisConnect Mobile InsurTech Suite</p>
+        <p class="footer-desc">Aegis Sigorta A.Ş. &amp; Nexora Bilişim A.Ş. Sözleşme ve SLA Portalı</p>
+      </div>
+      <div class="footer-links">
+        <a href="#contracts" data-tab="contracts" class="footer-nav">Sözleşmeler</a>
+        <a href="#guide" data-tab="guide" class="footer-nav">Junior Rehberi</a>
+        <a href="#calculator" data-tab="calculator" class="footer-nav">SLA Hesaplayıcı</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
