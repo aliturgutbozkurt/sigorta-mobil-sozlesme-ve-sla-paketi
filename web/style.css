@@ -1,4 +1,39 @@
 :root {
+  --bg-dark: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-surface: #ffffff;
+  --border-color: #e2e8f0;
+  --border-focus: #0284c7;
+  
+  --primary: #0284c7;
+  --primary-glow: rgba(2, 132, 199, 0.2);
+  --primary-hover: #0369a1;
+  --secondary: #0369a1;
+  
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
+  
+  --accent-green: #059669;
+  --accent-amber: #d97706;
+  --accent-red: #dc2626;
+  --accent-purple: #7c3aed;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
+}
+
+body.dark-theme {
   --bg-dark: #070B14;
   --bg-card: rgba(15, 23, 42, 0.85);
   --bg-card-hover: rgba(30, 41, 59, 0.95);
@@ -20,15 +55,6 @@
   --accent-red: #EF4444;
   --accent-purple: #8B5CF6;
   
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Outfit', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-full: 9999px;
-  
   --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 25px rgba(0, 180, 216, 0.2);
 }
@@ -46,10 +72,16 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.1) 0%, transparent 45%);
+    radial-gradient(circle at 15% 15%, rgba(2, 132, 199, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(124, 58, 237, 0.05) 0%, transparent 45%);
   background-attachment: fixed;
   min-height: 100vh;
+}
+
+body.dark-theme {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.1) 0%, transparent 45%);
 }
 
 /* NAVBAR */
@@ -57,11 +89,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(7, 11, 20, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   padding: 0.75rem 0;
+}
+
+body.dark-theme .navbar {
+  background: rgba(7, 11, 20, 0.85);
 }
 
 .nav-container {
@@ -98,6 +134,12 @@ body {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  background: linear-gradient(to right, #0f172a, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .brand-title {
   background: linear-gradient(to right, #FFF, #90E0EF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -116,10 +158,14 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #f1f5f9;
   padding: 0.3rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
+}
+
+body.dark-theme .nav-links {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .nav-btn {
@@ -139,6 +185,10 @@ body {
 
 .nav-btn:hover {
   color: var(--text-main);
+  background: rgba(2, 132, 199, 0.08);
+}
+
+body.dark-theme .nav-btn:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -154,12 +204,36 @@ body {
   gap: 1rem;
 }
 
+.theme-btn {
+  background: rgba(2, 132, 199, 0.1);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: var(--text-main);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
 .lang-switch {
   display: flex;
-  background: rgba(255, 255, 255, 0.05);
+  background: #f1f5f9;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   padding: 2px;
+}
+
+body.dark-theme .lang-switch {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .lang-btn {
@@ -176,6 +250,10 @@ body {
 
 .lang-btn.active {
   background: var(--primary);
+  color: #ffffff;
+}
+
+body.dark-theme .lang-btn.active {
   color: #070B14;
 }
 

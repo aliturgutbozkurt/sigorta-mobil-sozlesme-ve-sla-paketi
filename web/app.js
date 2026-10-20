@@ -634,8 +634,41 @@ console.log("Health request:", JSON.stringify(req.body));
     document.getElementById('btn-recalculate').addEventListener('click', calculateSLA);
 
     // Initial renders
+    initTheme();
     applyLanguage('tr');
     calculateSLA();
+  }
+
+  function initTheme() {
+    const savedTheme = localStorage.getItem('sigorta_theme') || 'light';
+    applyTheme(savedTheme);
+
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.body.classList.contains('dark-theme');
+        const newTheme = isDark ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('sigorta_theme', newTheme);
+      });
+    }
+  }
+
+  function applyTheme(theme) {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+      if (themeToggleBtn) {
+        themeToggleBtn.querySelector('.theme-icon').textContent = '☀️';
+        themeToggleBtn.querySelector('.theme-text').textContent = 'Açık';
+      }
+    } else {
+      document.body.classList.remove('dark-theme');
+      if (themeToggleBtn) {
+        themeToggleBtn.querySelector('.theme-icon').textContent = '🌙';
+        themeToggleBtn.querySelector('.theme-text').textContent = 'Koyu';
+      }
+    }
   }
 
   // Run on DOM ready
